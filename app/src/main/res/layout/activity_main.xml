@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#E8EDED" />
+            android:background="#D4DDDD" />
 
         <!-- FrameLayout where fragments or layouts will be placed -->
         <FrameLayout
