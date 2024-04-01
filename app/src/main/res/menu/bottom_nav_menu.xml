@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/makanankhas"
+        android:title="Makanan Khas"
+        android:icon="@drawable/round_fastfood_24"/>
+
+    <item
+        android:id="@+id/minumankhas"
+        android:title="Minuman Khas"
+        android:icon="@drawable/round_emoji_food_beverage_24"/>
+
+    <item
+        android:id="@+id/makananfavorite"
+        android:title="Makanan Favorite"
+        android:icon="@drawable/round_favorite_24"/>
+</menu>
