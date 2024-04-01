@@ -20,7 +20,6 @@ public class AdapterMakananFavorite extends RecyclerView.Adapter<AdapterMakananF
     private Context context;
     private List<ModelKuliner> listData;
     private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
 
     public AdapterMakananFavorite(List<ModelKuliner> listData, Context context){
         this.listData = listData;
@@ -51,7 +50,7 @@ public class AdapterMakananFavorite extends RecyclerView.Adapter<AdapterMakananF
         return listData.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvMakananFavorite, tvDeskripsi;
         ImageView ivImageMakanan;
@@ -60,28 +59,8 @@ public class AdapterMakananFavorite extends RecyclerView.Adapter<AdapterMakananF
             tvMakananFavorite = itemView.findViewById(R.id.tvNamaMakananFav);
             tvDeskripsi = itemView.findViewById(R.id.tvDeskripsiFav);
             ivImageMakanan = itemView.findViewById(R.id.ivImageMakananFav);
-            itemView.setOnClickListener(this);
         }
 
-        @Override
-        public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
-        }
-    }
-
-    // convenience method for getting data at click position
-    public ModelKuliner getItem(int id) {
-        return listData.get(id);
-    }
-
-    // allows clicks events to be caught
-    public void setClickListener(ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
-
-    // parent activity will implement this method to respond to click events
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
     }
 
 

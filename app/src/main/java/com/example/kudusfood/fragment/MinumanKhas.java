@@ -18,7 +18,7 @@ import com.example.kudusfood.adapter.AdapterMinumanKhas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MinumanKhas extends Fragment implements AdapterMinumanKhas.ItemClickListener {
+public class MinumanKhas extends Fragment {
 
     List<ModelKuliner> items;
     RecyclerView recyclerView;
@@ -49,13 +49,9 @@ public class MinumanKhas extends Fragment implements AdapterMinumanKhas.ItemClic
         // Set up the RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new AdapterMinumanKhas(items, requireContext());
-        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         return view;
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
 
-    }
 }

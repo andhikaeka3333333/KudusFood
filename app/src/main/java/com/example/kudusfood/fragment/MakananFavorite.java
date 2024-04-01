@@ -18,7 +18,7 @@ import com.example.kudusfood.adapter.AdapterMakananFavorite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MakananFavorite extends Fragment implements AdapterMakananFavorite.ItemClickListener{
+public class MakananFavorite extends Fragment{
 
     List<ModelKuliner> items;
     RecyclerView recyclerView;
@@ -52,12 +52,9 @@ public class MakananFavorite extends Fragment implements AdapterMakananFavorite.
         // Set up the RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new AdapterMakananFavorite(items, requireContext());
-        adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
         return view;
 
     }
-    @Override
-    public void onItemClick(View view, int position) {
-    }
+
 }

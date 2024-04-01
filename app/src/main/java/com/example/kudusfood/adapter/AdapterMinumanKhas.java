@@ -20,7 +20,7 @@ public class AdapterMinumanKhas extends RecyclerView.Adapter<AdapterMinumanKhas.
     private Context context;
     private List<ModelKuliner> listData;
     private LayoutInflater mInflater;
-    private AdapterMinumanKhas.ItemClickListener mClickListener;
+
 
     public AdapterMinumanKhas(List<ModelKuliner> listData, Context context){
         this.listData = listData;
@@ -51,7 +51,7 @@ public class AdapterMinumanKhas extends RecyclerView.Adapter<AdapterMinumanKhas.
         return listData.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvMakananKhas, tvDeskripsi;
         ImageView ivImageMakanan;
@@ -60,29 +60,8 @@ public class AdapterMinumanKhas extends RecyclerView.Adapter<AdapterMinumanKhas.
             tvMakananKhas = itemView.findViewById(R.id.tvNamaMinumanKhas);
             tvDeskripsi = itemView.findViewById(R.id.tvDeskripsiMinumanKhas);
             ivImageMakanan = itemView.findViewById(R.id.ivImageMinumanKhas);
-            itemView.setOnClickListener(this);
-        }
 
-        @Override
-        public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
         }
     }
-
-    // convenience method for getting data at click position
-    public ModelKuliner getItem(int id) {
-        return listData.get(id);
-    }
-
-    // allows clicks events to be caught
-    public void setClickListener(AdapterMinumanKhas.ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
-    }
-
-    // parent activity will implement this method to respond to click events
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
 
 }
